@@ -1,0 +1,15 @@
+{
+    "name": "app17",
+    "version": "1.0.0",
+    "description": "exrecise",
+    "main": "app17.js",
+    "scripts": {
+        "start": "node app17.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Adane",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
