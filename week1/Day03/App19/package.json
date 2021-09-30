@@ -1,0 +1,15 @@
+{
+    "name": "app19",
+    "version": "1.0.0",
+    "description": "home number three",
+    "main": "app19.js",
+    "scripts": {
+        "start": "node app19.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Adane",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
