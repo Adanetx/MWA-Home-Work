@@ -72,10 +72,7 @@ const deletGame = function(req, res) {
         res.status(400).json({ "message": " Invalid game Id" })
     }
 
-    if (!mongoose.isValidObjectId(gameId)) {
-        console.log("Invalid game id");
-        res.status(400).json({ "message": " Invalid game Id" })
-    }
+
 
 
     console.log("DELETE gameId", gameId);
@@ -88,7 +85,7 @@ const deletGame = function(req, res) {
             console.log("Error fiding game");
             response.status = 404;
             response.message = err;
-        } else if (!deletGame) {
+        } else if (!deletedGame) {
             response.status = 500;
             res.json({ "message": "game Id not found" })
         }
