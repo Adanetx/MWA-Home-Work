@@ -24,7 +24,7 @@ const foodsGetAll = function(req, res) {
                     console.log("error finding foods");
                     res.status(500).json(err);
                 } else {
-                    console.log("founded game", foods.length);
+                    console.log("founded food", foods.length);
                     res.json(foods);
                 }
             });
