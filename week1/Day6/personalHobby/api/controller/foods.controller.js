@@ -102,13 +102,13 @@ const foodUpate = function(req, res) {
     const foodId = req.params.foodId;
 
     if (!mongoose.isValidObjectId(req.params.gameId)) {
-        console.log("Invalid game id");
-        res.status(400).json({ "message": " Invalid game Id" })
+        console.log("Invalid food id");
+        res.status(400).json({ "message": " Invalid food Id" })
         return;
     }
 
 
-    Game.findById(foodId).exec(function(err, food) {
+    Food.findById(foodId).exec(function(err, food) {
 
         if (err) {
 
@@ -116,7 +116,7 @@ const foodUpate = function(req, res) {
 
             res.status(500).json(err);
         } else if (!food) {
-            console.log("game not found");
+            console.log("food not found");
             res.status(404).json({ "message": "food Id not found" });
 
 
@@ -127,7 +127,7 @@ const foodUpate = function(req, res) {
             food.calory = parseInt(req.body.calory);
 
 
-            food.save(function(err, updateFood) {
+            food.save(function(err, updatedFood) {
                 if (err) {
                     res.status(500).json(err);
                     console.log("saving error");
