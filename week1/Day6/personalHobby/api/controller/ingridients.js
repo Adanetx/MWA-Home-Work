@@ -44,7 +44,7 @@ const addOne = function(req, res) {
             food.ingridients.push(newfood);
             food.save(function(err, result) {
                 if (err) {
-                    console.log("there is error");
+                    console.log("there is  error on saving data");
                     res.status(500).json(err);
                 } else {
                     res.status(200).json(result);

@@ -44,10 +44,13 @@ const addOne = function(req, res) {
                 review: req.body.review,
                 date: req.body.date
             };
+
+            console.log(" new review is ", newReview)
             game.reviews.push(newReview);
             game.save(function(err, result) {
+                console.log("result", result)
                 if (err) {
-                    console.log("there is error");
+                    console.log("can not save due to error");
                     res.status(500).json(err);
                 } else {
                     res.status(200).json(result);
