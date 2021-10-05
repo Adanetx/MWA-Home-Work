@@ -1,16 +1,29 @@
 const mongoose = require("mongoose");
 // 
 const ingridentSchema = new mongoose.Schema({
-    substance: String,
-    amount: String,
-    catagory: String
+    substance: {
+        type: String
+    },
+    amount: {
+        type: String
+    },
+    catagory: {
+        type: String
+    }
 
 });
 const foodSchema = new mongoose.Schema({
-    name: String,
-    origin: String,
-    calory: Number,
-    ingridient: [ingridentSchema]
+    name: {
+        type: String
+    },
+    origin: {
+
+        type: String
+    },
+    calory: {
+        type: Number
+    },
+    ingridients: [ingridentSchema]
 
 });
 mongoose.model("Food", foodSchema, "foods");

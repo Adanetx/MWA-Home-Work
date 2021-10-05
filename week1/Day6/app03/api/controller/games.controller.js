@@ -78,7 +78,8 @@ const deletGame = function(req, res) {
     console.log("DELETE gameId", gameId);
     Game.findByIdAndRemove(gameId).exec(function(err, deletedGame) {
         const response = {
-            status: 200
+            status: 200,
+            message: []
 
         };
         if (err) {
@@ -89,7 +90,7 @@ const deletGame = function(req, res) {
             response.status = 500;
             res.json({ "message": "game Id not found" })
         }
-        res.status(404).json({ "message": "game already deleted" })
+        res.status(204).json({ "message": "game already deleted" })
     });
 };
 
@@ -118,17 +119,11 @@ const gameUpate = function(req, res) {
 
 
         } else {
-            //     //if (response.status !== 200) {
-            //         res.status(200).json()
-            // }
 
-            // }
             game.title = req.body.title;
             game.year = parseInt(req.body.year);
             game.price = parseFloat(req.body.price);
 
-            // game.designer = req.body.designer;
-            // game.rate = parseFloat(req.body.rate)
             game.save(function(err, updatedGame) {
                 if (err) {
                     res.status(500).json(err);

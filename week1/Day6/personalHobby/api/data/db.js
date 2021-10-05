@@ -1,10 +1,9 @@
 const mongoose = require("mongoose")
-const dbName = 'Food';
-const dburl = "mongodb://localhost:27017/" + dbName
+const url = `${process.env.DATABASE_URL}/${process.env.DATA_BASE}`
 const game = require("./foods-model")
-mongoose.connect(dburl);
+mongoose.connect(url);
 mongoose.connection.on("connected", function() {
-    console.log("Mongoose connected to " + dburl);
+    console.log("Mongoose connected to " + url);
 });
 mongoose.connection.on("diconnected", function() {
     console.log("Mongoose diconnected");
