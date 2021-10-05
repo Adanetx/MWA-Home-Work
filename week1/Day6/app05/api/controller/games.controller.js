@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Game = mongoose.model("Game");
 const gamesGetAll = function(req, res) {
     let offset = 0;
-    let count = 5;
+    let count = 0;
     let max = 12;
     if (req.query && req.query.offset) {
         offset = parseInt(req.query.offset, 10)

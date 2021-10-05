@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-const Game = mongoose.model("meanGames");
+const Game = mongoose.model("Game");
 const getAllReviews = function(req, res) {
     console.log("get request to all reviews");
 
-    let gameId = req.params.reviewId;
+    let gameId = req.params.gameId;
 
     if (!mongoose.isValidObjectId(gameId)) {
         console.log("In valid Id");
@@ -13,6 +13,7 @@ const getAllReviews = function(req, res) {
     Game.findById(gameId)
         .select("reviews")
         .exec(function(err, game) {
+            console.log("game I got with review is ", game)
             if (err) {
                 console.log("error foud");
                 res.status(500).res.json({ message: "there is error" });
@@ -31,8 +32,10 @@ const addOne = function(req, res) {
 
     console.log("the game Id is ", gameId);
     Game.findById(gameId).exec(function(err, game) {
+
         if (err) {
             console.log("there is error");
+            res.status(500).json(err)
         } else if (!game) {
             res.status(400).json("game is not found");
         } else {

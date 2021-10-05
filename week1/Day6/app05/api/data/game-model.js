@@ -2,13 +2,15 @@ const mongoose = require("mongoose");
 // 
 const reviewSchema = new mongoose.Schema({
     name: {
-        type: Stirng
+        type: String
     },
     review: {
         type: String
     },
     date: {
-        type: Date
+        type: Date,
+        min: "2020-09-28",
+        max: "2026-05-23"
     }
 })
 const publisherSchema = new mongoose.Schema({
