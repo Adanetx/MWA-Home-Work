@@ -1,9 +1,9 @@
-angular.module("myPropperApp").factory("PostFactory", PostFactory)
+angular.module("myPropperApp").factory("StaffFactory", StaffFactory)
 
-function PostFactory($http) {
+function StaffFactory($http) {
     return {
-        getAllPosts: getAll,
-        getOnePost: getOne
+        getAllStaffs: getAll,
+        getOneStaff: getOne
     }
 
     function getAll() {

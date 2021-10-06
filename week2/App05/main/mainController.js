@@ -1,9 +1,9 @@
 angular.module("myPropperApp").controller("MainController", MainController)
 
-function MainController(PostFactory) {
+function MainController(StaffFactory) {
     const vm = this
 
-    PostFactory.get("https://jsonplaceholder.typicode.com/staffs")
+    StaffFactory.get("https://jsonplaceholder.typicode.com/staffs")
         .then(function(response) {
             vm.jokes = response.data
         })
