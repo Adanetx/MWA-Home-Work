@@ -11,13 +11,13 @@ function config($routeProvider) {
         controller: "AboutController",
         controllerAs: "aboutCtrl"
     }).when('/staff', {
-        templateUrl: "./posts/posts.html",
-        controller: "PostsController",
-        controllerAs: "postsCtrl"
-    }).when('/staff/:postId', {
-        templateUrl: "./post/post.html",
-        controller: "PostController",
-        controllerAs: "postCtrl"
+        templateUrl: "./staffs/staffs.html",
+        controller: "StaffsController",
+        controllerAs: "staffsCtrl"
+    }).when('/staff/:staffId', {
+        templateUrl: "./staff/staff.html",
+        controller: "StaffController",
+        controllerAs: "staffCtrl"
     }).otherwise({
         redirectTo: "/"
     })

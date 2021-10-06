@@ -11,8 +11,8 @@ function PostFactory($http) {
             .then(complete).catch(failed)
     }
 
-    function getOne(postId) {
-        return $http.get("https://jsonplaceholder.typicode.com/users/" + postId)
+    function getOne(staffId) {
+        return $http.get("https://jsonplaceholder.typicode.com/users/" + staffId)
             .then(complete).catch(failed)
     }
 
