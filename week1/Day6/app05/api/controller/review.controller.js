@@ -44,7 +44,9 @@ const addOne = function(req, res) {
                 review: req.body.review,
                 date: req.body.date
             };
+            if (game.reviews.length() == 0) {
 
+            }
             console.log(" new review is ", newReview)
             game.reviews.push(newReview);
             game.save(function(err, result) {
