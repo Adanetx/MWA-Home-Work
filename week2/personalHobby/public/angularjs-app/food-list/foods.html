@@ -1,0 +1,8 @@
+<h1>{{vm.title}}</h1>
+
+<ul>
+    <li ng-repeat="food in vm.foods">
+        <a ng-href="#!/foods/{{food._id}}"> {{food.title}}</a>
+        <!-- the exclamation sign is showing that it shows anglar install locally -->
+    </li>
+</ul>
