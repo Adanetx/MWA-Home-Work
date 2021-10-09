@@ -1,0 +1,50 @@
+<h1>welcome to Job searching App</h1>
+
+<div style="padding-left: 2em;">
+
+    <!-- <button ng-click=vm.previous()>previous</button vm.next()><button>next</button> -->
+    <br />
+    <div class="tableClass">
+        <table>
+            <tr>
+                <th>title</th>
+                <th>details</th>
+                <th>delete</th>
+            </tr>
+            <tr ng-if="vm.nodataFound">
+                <td colspan="7">No Data Found</td>
+            </tr>
+            <tr ng-if="!vm.nodataFound" ng-repeat="job in vm.jobs">
+                <td>{{job.title}}</td>
+                <td> <a ng-href="#!/jobs/{{job._id}}"> details </a></td>
+                <td>
+                    <button ng-click="vm.jobDelete(job._id)">Delete</button>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <select ng-model="vm.get" on-change="vm.onGetSelect(vm.get);">
+        <option ng-repeat="o in vm.options">{{o}}</option>
+    </select>
+    <div ng-if="vm.get !=0? vm.onGetSelect(vm.get):cc=true;">{{someName}}</div>
+
+    <button ng-click=vm.previous()>previous</button>
+    <button ng-click=vm.next()>next</button>
+
+
+    <div>
+
+        <form name="vm.jobForm" ng-submit="vm.addJobs()" style="color:black;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+">
+
+            Add new job to the form <br> Title :<input type="text" name="title" required ng-model="vm.jobTitle" style="color: black;" /><br /> Salary : <input type="text" name="salary" ng-model="vm.jobSalary" style="color: black" /><br /> Description
+            : <input type="text" name="description" required ng-model="vm.jobDescription" style="color: black" /><br /> Skills : <input type="text" name="skills" ng-model="vm.jobSkill" style="color: black" /><br />
+
+            <button type="submit" class="btn-success">Add Job</button>
+
+        </form>
+    </div>
