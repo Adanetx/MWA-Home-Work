@@ -1,0 +1,68 @@
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid red;
+    }
+</style>
+<h3 style="padding-left: 2em; font-family: cursive; font-style: oblique"></h3>
+
+<div style="padding-left: 2em">
+    <br />
+    <div class="tableClass">
+        <table>
+            <tr>
+                <th>substance of the ingridient</th>
+                <th>detail about the ingridient</th>
+                <th>delete</th>
+            </tr>
+            <tr ng-if="vm.nodataFound">
+                <td colspan="7">No Data Found</td>
+            </tr>
+            <tr ng-if="!vm.nodataFound" ng-repeat="ingridient in vm.ingridients">
+                <td>{{ingridient.substance}}</td>
+                <td>
+                    <a ng-href="#!foods/{{food._id}}/ingridients/{{ingridient._id}}" style="text-decoration: none">
+            details
+          </a>
+                </td>
+                <td>
+                    <button ng-click="vm.ingridientDelete(ingridient._id)" style="background-color: red">
+            Delete
+          </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="margin-top: 2%">
+        <select ng-model="vm.get" on-change="vm.onGetSelect(vm.get);" style="border-radius: 5px; background-color: blue">
+      <option ng-repeat="o in vm.options">{{o}}</option>
+    </select>
+        <div ng-if="vm.get !=0? vm.onGetSelect(vm.get):cc=true;">{{someName}}</div>
+
+        <button ng-click="vm.previous()" style="border-radius: 6px; background-color: green">
+      previous
+    </button>
+        <button ng-click="vm.next()" style="border-radius: 6px; background-color: green">
+      next
+    </button>
+    </div>
+    <div>
+        <form substance="vm.ingridientForm" ng-submit="vm.addIngridients()" style="
+        color: white;
+        padding: 10px 10px;
+        margin: 8px 0;
+        display: inline-block;
+      ">
+            <h5 style="font-style: oblique; font-weight: normal; font-family: cursive">
+                Add new ingridient to the form
+            </h5>
+
+            Substance :<input type="text" name="substance" required ng-model="vm.ingridientSubstance" style="color: black" /><br /> Amount :
+            <input type="text" name="amount" ng-model="vm.ingridientAmount" style="color: black" /><br /> Catagory :
+            <input type="text" name="catagory " required ng-model="vm.ingridientCatagory" style="color: black" /><br />
+
+            <button type="submit" class="btn-success">Add Ingridient</button>
+        </form>
+    </div>
+</div>
