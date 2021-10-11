@@ -9,23 +9,18 @@
     welcome to Food searching App
 </h3>
 <label for="name" style="padding-left: 2em">
-  name
-  <input
-    type="String"
-    ng-model="vm.name"
-    name="name"
-    style="border-radius: 10px"
-/></label>
+    name
+    <input type="String" ng-model="vm.name" name="name" style="border-radius: 10px" /></label>
 <button ng-click="vm.search();" style="border-radius: 6px">Search</button>
-<span ng-show="vm.searchedTitleEmpty" style="color: red" ng-click="vm.searchedTitleEmpty=false">Please Insert The name of the food To Search</span
->
+<span ng-show="vm.searchedTitleEmpty" style="color: red" ng-click="vm.searchedTitleEmpty=false">Please Insert The name
+    of the food To Search</span>
 <div style="padding-left: 2em">
     <br />
     <div class="tableClass">
         <table>
             <tr>
                 <th>name of the food</th>
-                <th>add Ingridients</th>
+
                 <th>detail about the food</th>
                 <th>delete</th>
             </tr>
@@ -36,38 +31,30 @@
                 <td>{{food.name}}</td>
 
                 <td>
-                    <a ng-href="#!/foods/{{food._id}/}/ingridients" style="text-decoration: none">
-                 add
-            </a>
-                </td>
-
-
-                <td>
-
                     <a ng-href="#!/foods/{{food._id}}" style="text-decoration: none">
-            details
-          </a>
+                        details
+                    </a>
                 </td>
                 <td>
                     <button ng-click="vm.foodDelete(food._id)" style="background-color: red">
-            Delete
-          </button>
+                        Delete
+                    </button>
                 </td>
             </tr>
         </table>
     </div>
     <div style="margin-top: 2%">
         <select ng-model="vm.get" on-change="vm.onGetSelect(vm.get);" style="border-radius: 5px; background-color: blue">
-      <option ng-repeat="o in vm.options">{{o}}</option>
-    </select>
+            <option ng-repeat="o in vm.options">{{o}}</option>
+        </select>
         <div ng-if="vm.get !=0? vm.onGetSelect(vm.get):cc=true;">{{someName}}</div>
 
         <button ng-click="vm.previous()" style="border-radius: 6px; background-color: green">
-      previous
-    </button>
+            previous
+        </button>
         <button ng-click="vm.next()" style="border-radius: 6px; background-color: green">
-      next
-    </button>
+            next
+        </button>
     </div>
     <div>
         <form name="vm.foodForm" ng-submit="vm.addFoods()" style="
