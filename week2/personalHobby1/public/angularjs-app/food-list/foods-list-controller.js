@@ -89,4 +89,22 @@ function FoodsController(FoodsFactory) {
 
         }
     }
+    vm.search = () => {
+        if (vm.name) {
+            FoodsFactory.searchOne(vm.name).then(function(response) {
+                console.log("the response is ", response);
+                if (!response.data) {
+                    console.log("there is no data");
+                    vm.nodataFound = true;
+                } else {
+                    vm.foods = response.data
+                    vm.searchExist - true;
+                    vm.nodataFound = false;
+                    console.log("the foods are ", response.data);
+                }
+            })
+        } else {
+            vm.searchedNameEmpty = true;
+        }
+    }
 }

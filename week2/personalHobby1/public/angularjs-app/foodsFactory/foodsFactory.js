@@ -6,7 +6,9 @@ function FoodsFactory($http) {
         getOneFood: getOne,
         postFood: postFood,
         deleteFood: deleteOne,
-        getCount: getFoods
+        getCount: getFoods,
+        searchOne: search,
+        postUser: postUser
     }
 
     function getAll(offset) {
@@ -22,6 +24,10 @@ function FoodsFactory($http) {
 
     }
 
+    function postUser(user) {
+        return $http.post("api/users/register", user).then(complete).catch(fetch);
+    }
+
     function getOne(foodId) {
         return $http.get("/api/foods/" + foodId)
             .then(complete).catch(failed)
@@ -34,6 +40,14 @@ function FoodsFactory($http) {
     function deleteOne(foodId) {
         return $http.delete("api/foods/" + foodId).then(complete).catch(failed)
     }
+
+    function search(name) {
+        console.log("search by name ", name);
+        return $http.get("/api/foods/?name=" + name).then(complete).catch(error);
+    }
+
+
+
 
     function complete(response) {
         console.log("got response");

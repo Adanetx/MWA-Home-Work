@@ -12,6 +12,7 @@ const ingridentSchema = new mongoose.Schema({
     }
 
 });
+
 const foodSchema = new mongoose.Schema({
     name: {
         type: String
@@ -23,7 +24,8 @@ const foodSchema = new mongoose.Schema({
     calory: {
         type: Number
     },
-    ingridients: [ingridentSchema]
+    ingridients: [ingridentSchema],
+
 
 });
 mongoose.model("Food", foodSchema, "foods");

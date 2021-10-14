@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const controllerUsers = require("../controller/usersController")
 const IngController = require("../controller/ingridients")
 const foodsController = require("../controller/foods.controller");
 router.route("/foods").get(foodsController.foodsGetAll);
@@ -12,6 +13,8 @@ router.route("/foods/:foodId/ingridients").post(IngController.addOne);
 router.route("/foods/:foodId/ingridients/:ingridientId").put(IngController.updateOne);
 router.route("/foods/:foodId/ingridients/:ingridientId").get(IngController.getOne);
 router.route("/foods/:foodId/ingridients/:ingridientId").delete(IngController.deleteOne);
+router.route("/users/register").post(controllerUsers.register);
+router.route("/users/login").post(controllerUsers.login)
 
 
 

@@ -42,7 +42,6 @@ const foodsGetOne = function(req, res) {
         res.status(400).json({ message: " Invalid food Id" });
     }
 
-
     Food.findById(foodId).exec(function(err, food) {
         if (err) {
             console.log("error found");

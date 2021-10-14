@@ -1,0 +1,10 @@
+ 1- Why do we say Node uses an Event-Driven-Architecture?
+answer: the reason we say node is Event-Driven-Loop is, we use event-loop for node
+ to perform none blocking operation. even if javascript is single threaded we can use event loop to perform none blcoking operations.
+
+2, Can you write Node code that is not event driven? Why? yes I can write because if I did not want to pass call back, I do not need event driven.  
+
+ 3- Why does Chrome use a layout tree? they use this to create the visible node to user. 
+layout tree are what are going are going to layer trees
+
+4- Install Angular (@angular/cli) and create a template Angular application (similar to what we did in class).

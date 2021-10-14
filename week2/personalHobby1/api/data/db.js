@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 const url = `${process.env.DATABASE_URL}/${process.env.DATA_BASE}`
-const food = require("./foods-model")
+const food = require("./foods-model");
+const user = require("./userModel")
 mongoose.connect(url);
 mongoose.connection.on("connected", function() {
     console.log("Mongoose connected to " + url);

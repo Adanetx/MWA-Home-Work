@@ -12,6 +12,10 @@ function config($routeProvider) {
         templateUrl: "angularjs-app/food-one/food.html",
         controller: "FoodController",
         controllerAs: "vm"
+    }).when("/register", {
+        templateUrl: "angularjs-app/register/register.html",
+        controller: "RegisterController",
+        controllerAs: "vm"
     }).otherwise({
         redirectTo: "/"
     })
