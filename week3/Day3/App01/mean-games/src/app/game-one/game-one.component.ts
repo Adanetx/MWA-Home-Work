@@ -21,7 +21,7 @@ export class GameOneComponent implements OnInit {
     this.gamesDataService.getGame(gameId).then(response => this.game = response)
 
     this.gamesDataService.getGame(gameId).then(function(response){
-     // this.game = response;
+
       console.log(response);
       
     })

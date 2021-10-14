@@ -1,5 +1,5 @@
 <ul>
-    <li *ngFor="let game of games">
+    <li *ngFor="let game of games" style="color: white;">
         Title: {{game.title}} <a href="games/{{game._id}}">Details</a><br> {{game._id}}
         <br> Price: {{game.price}}<br> Year: {{game.year}}<br>
     </li>
