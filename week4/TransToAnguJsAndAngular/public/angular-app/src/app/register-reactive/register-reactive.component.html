@@ -1,0 +1,30 @@
+<form [formGroup]="registerationForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label>
+            Name: 
+            <input formControlName = "name" placeholder="Your name"/>
+            <span *ngIf="registerationForm.controls.name.invalid && 
+            (registerationForm.controls.name.dirty || registerationForm.controls.name.touched)">Please provide a name</span>
+        </label>
+    </div>
+    <div>
+        <label>
+            Username: 
+            <input formControlName = "username" placeholder="Username"/>
+        </label>
+    </div>
+    <div>
+        <label>
+            Username: 
+            <input type="password" formControlName = "password" placeholder="Password"/>
+        </label>
+    </div>
+    <div>
+        <label>
+            Username: 
+            <input type="password" formControlName = "passwordRepeat" placeholder="Password Repeat"/>
+        </label>
+    </div>
+
+    <button type="submit" [disabled]="registerationForm.invalid">Register</button>
+</form>

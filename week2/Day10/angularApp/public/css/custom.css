@@ -1,0 +1,42 @@
+html {
+    position: relative;
+    min-height: 100%;
+    background: chocolate;
+}
+
+body {
+    margin-bottom: 90px;
+}
+
+.padded {
+    padding-top: 30px;
+}
+
+div {
+    width: 90%;
+    align-items: center;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4%;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 50%;
+    /* background-color: #4CAF50; */
+    color: black;
+    padding: 7px 10px;
+    margin: 4px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

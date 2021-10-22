@@ -1,0 +1,40 @@
+<form #registrationForm="ngForm" (ngSubmit)="onSubmit()" novalidatestyle="
+color: white;
+padding: 10px 10px;
+margin: 8px 0;
+display: inline-block">
+
+    <div>
+        <label>
+            Name: 
+           
+            <input name = "name"  id="name" placeholder="Your name" 
+             ngModel required/>
+             
+             <!-- <span *ngIf="registrationForm.controls.name.invalid && 
+             (registrationForm.controls.name.dirty || registrationForm.controls.name.touched)">Please provide a name</span>
+        -->
+             </label>
+    </div>
+    <div>
+        <label>
+            Username: 
+            <input name = "username"  id="username" placeholder="Username" ngModel/>
+        </label>
+    </div>
+    <div>
+        <label>
+            Password: 
+            <input type="password" name = "password"  id="password" placeholder="Password" ngModel/>
+        </label>
+    </div>
+    <div>
+        <label>
+            passwordRepeat: 
+            <input type="password" name = "passwordRepeat" placeholder="Password Repeat" ngModel/>
+        </label>
+    </div>
+
+    <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+    <button type="button" (click)="onClear()">Clear</button>
+</form>

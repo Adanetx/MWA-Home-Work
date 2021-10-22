@@ -1,0 +1,28 @@
+<h3 style="font-style: oblique; padding-left: 2em">
+    Infomation about single game
+</h3>
+<p style="padding-left: 2em; font-family: cursive; font-style: oblique">
+    title: {{vm.game.title}}; <br /> year: {{vm.game.year}} <br /> price :{{vm.game.price }} <br /> maximu players: {{vm.game.maxPlayers}} <br /> minimum players: {{vm.game.minPplayers}} <br /> rate: {{vm.game.rate}} <br />
+
+    <span ng-show="!vm.updateFlag"><button
+      style="
+        color: green;
+        text-align: center;
+        margin-left: 10px;
+        border-radius: 5px;
+      "
+      ng-click="vm.showForm()"
+    >
+      update
+    </button>
+  </span>
+</p>
+<form ng-show="vm.updateFlag" name="vm.gameForm" ng-submit="vm.updateGame()" style="color: white; padding: 10px 10px; margin: 8px 0; display: inline-block">
+    you can update the value. <br /> Title :<input type="text" name="title" required ng-model="vm.gameTitle" style="color: black" /><br /> Year:
+    <input type="number" name="year" required ng-model="vm.gameYear" style="color: black" /><br /> Price :
+    <input type="number" name="price " required ng-model="vm.gamePrice " style="color: black" /><br /> minimum Players :
+    <input type="number" name="minPlayers" required ng-model="vm.gameMinPlayers " style="color: black" /><br /> maximum Player :
+    <input type="number" name="maxPlayers" required ng-model="vm.gameMaxPlayers" style="color: black" /><br /> rate :
+    <input type="number" name="rate" required ng-model="vm.gameRate " style="color: black" /><br />
+    <button type="submit" class="btn-success">update</button>
+</form>

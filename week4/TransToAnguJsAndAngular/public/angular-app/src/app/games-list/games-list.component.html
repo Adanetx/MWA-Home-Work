@@ -1,0 +1,72 @@
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid red;
+    }
+</style>
+
+<table>
+    <tr *ngFor="let game of games">
+        <td>{{game.title}}</td>
+        <td><a routerLink="{{game._id}}">Details</a></td>
+        <td><span><button style="background-color:tomato;" (click)="delete(game._id)">Delete</button></span></td>
+    </tr>
+</table>
+<div>
+    <span class="iterate"> <button (click)="onPrevious()" style="margin: 8px;">previous</button>
+        <button (click)="onNext()">next</button></span>
+</div>
+
+<form #gameForm="ngForm" (ngSubmit)="onAddGame()" novalidaten style="
+color: white;
+padding: 10px 10px;
+margin: 8px 0;
+display: inline-block;">
+
+    <p>add game in the form below</p>
+
+    <div>
+        <label>
+          Title:<input type="text" name = "title"  id="title" placeholder="Game Title" 
+           ngModel required/>
+           
+           </label>
+    </div>
+    <div>
+        <label>
+          Price: 
+          <input type="number" name = "price"  id="price" placeholder="Price" ngModel/>
+      </label>
+    </div>
+
+
+    <div>
+        <label>
+      year: 
+        <input type="number" name = "year"  id="price" placeholder="Year" ngModel/>
+    </label>
+    </div>
+
+    <div>
+        <label>
+        minimum Players: 
+          <input type="number" name = "minPlayers"  id="minPlayers" placeholder="minPlayers" ngModel/>
+      </label>
+    </div>
+    <div>
+        <label>
+          Maximum Players: 
+          <input type="number" name = "maxPlayers" placeholder="maxPlayers" ngModel/>
+      </label>
+    </div>
+    <div>
+        <label>
+         rate: 
+          <input type="number" name = "rate" placeholder="rate" ngModel/>
+      </label>
+    </div>
+
+    <button type="submit" [disabled]="gameForm.invalid">Add</button>
+    <button type="button" (click)="onClear()">Clear</button>
+</form>
